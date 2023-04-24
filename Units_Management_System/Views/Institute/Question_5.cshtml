@@ -1,12 +1,12 @@
-﻿@model List<Units_Management_System.Models.ViewModels.Students_LessonsViewModel>
-<h1>List of students with their lessons:</h1>
+﻿@model List<Units_Management_System.Models.ViewModels.Students_TeachersViewModel>
+<h1>List of Students with their Teachers:</h1>
 <div>
     <table class="table table-bordered table-striped">
         <thead>
         <tr>
             <th>Name</th>
             <th>Family</th>
-            <th>Lessons</th>
+            <th>Teachers</th>
         </tr>
         </thead>
         <tbody>
@@ -15,7 +15,7 @@
             <tr>
                 <td>@item.FirstName</td>
                 <td>@item.LastName</td>
-                <td>@item.CourseName</td>
+                <td>@item.TeachersName</td>
             </tr>
         }
         </tbody>

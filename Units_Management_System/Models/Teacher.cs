@@ -11,5 +11,5 @@ public partial class Teacher
 
     public string Family { get; set; } = null!;
 
-    public virtual ICollection<Lesson> Lessones { get; set; } = new List<Lesson>();
+    public virtual ICollection<Lesson> Lessons { get; set; } = new List<Lesson>();
 }

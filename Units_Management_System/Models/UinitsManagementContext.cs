@@ -32,7 +32,7 @@ public partial class UinitsManagementContext : DbContext
             entity.Property(e => e.TeacherPeresentationId).HasColumnName("Teacher_Peresentation_Id");
             entity.Property(e => e.Title).HasMaxLength(50);
 
-            entity.HasOne(d => d.TeacherPeresentation).WithMany(p => p.Lessones)
+            entity.HasOne(d => d.TeacherPeresentation).WithMany(p => p.Lessons)
                 .HasForeignKey(d => d.TeacherPeresentationId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Lessones_Teahers");

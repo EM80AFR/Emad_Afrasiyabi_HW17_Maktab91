@@ -23,5 +23,25 @@ namespace Units_Management_System.Controllers
             }).ToList();
             return View(result);
         }
+        public IActionResult Question_4()
+        {
+            var result = _uniContext.Teachers.Include(x=>x.Lessons).Select(x => new Teachers_LessonsViewModel
+            {
+                FirstName = x.Name,
+                LastName = x.Family,
+                CourseName = string.Join("_", x.Lessons.Select(l => l.Title))
+            }).ToList();
+            return View(result);
+        }
+        public IActionResult Question_5()
+        {
+            var result = _uniContext.Students.Include(x => x.Lessons).Select(x => new Students_TeachersViewModel()
+            {
+                FirstName = x.Name,
+                LastName = x.Family,
+                TeachersName = string.Join("_", x.Lessons.Select(l => l.TeacherPeresentation.Name+" "+l.TeacherPeresentation.Family+$"({l.Title})"))
+            }).ToList();
+            return View(result);
+        }
     }
 }
