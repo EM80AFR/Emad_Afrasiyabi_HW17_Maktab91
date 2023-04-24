@@ -1,0 +1,23 @@
+﻿@model List<Units_Management_System.Models.ViewModels.Students_LessonsViewModel>
+<h1>List of students with their lessons</h1>
+<div>
+    <table class="table table-bordered table-striped">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Family</th>
+            <th>Lessons</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.FirstName</td>
+                <td>@item.LastName</td>
+                <td>@item.CourseName</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>

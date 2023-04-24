@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using Units_Management_System.Models;
+
 namespace Units_Management_System
 {
     public class Program
@@ -6,16 +9,15 @@ namespace Units_Management_System
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddDbContext<UinitsManagementContext>(a =>
+                a.UseSqlServer(builder.Configuration.GetConnectionString("GeneralConnection")));
 
             var app = builder.Build();
 
-            // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
             {
                 app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
 
